@@ -1,3 +1,11 @@
+# Own
+raw_data/
+models/
+logs/
+
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
