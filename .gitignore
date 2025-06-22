@@ -2,7 +2,7 @@
 raw_data/
 models/
 logs/
-
+.env
 
 
 
