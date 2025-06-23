@@ -42,6 +42,11 @@ word_collection=[]
 for submission in submissions:
     title_words = nltk.word_tokenize(submission.title,language="english")
     word_collection.extend(title_words)
+######################################
+# REDO SO WE GET CONTENT OF POST TOO #
+######################################
+
+
 
 # tickers to lower too
 tickers_lower = [t.lower() for t in tickers]
