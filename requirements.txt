@@ -2,3 +2,4 @@ nltk==3.9.1
 numpy==2.3.1
 praw==7.8.1
 pandas==2.3.0
+sentida==0.6.0
