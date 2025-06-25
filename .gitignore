@@ -4,7 +4,7 @@ models/
 logs/
 .env
 .vscode/
-
+*.pkl
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

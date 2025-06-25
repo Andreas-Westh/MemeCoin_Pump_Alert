@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 import nltk
 import pandas as pd
 from sentida import Sentida
-
+import pickle
 
 
 # grab .env
@@ -54,12 +54,20 @@ for submission in submissions:
         "id": submission.id,
         "title": submission.title,
         "content": submission.selftext,
-        "user": submission.author,
+        "user": submission.author.name if submission.author else None,
         "subreddit": submission.subreddit.display_name,
-        "date": submission.created_utc
+        "date": pd.to_datetime(submission.created_utc, unit="s")
     })
 
 df_submissions = pd.DataFrame(raw_submissions)
+
+#df_submissions.to_pickle("raw_submissions.pkl")
+
+
+existing_df = pd.read_pickle("raw_submissions.pkl")
+
+df_submissions = pd.concat([existing_df, df_submissions], ignore_index=True)
+df_submissions.drop_duplicates(subset="id", inplace=True)
 
 
 
