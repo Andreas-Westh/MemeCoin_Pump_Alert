@@ -46,6 +46,35 @@ for submission in submissions:
 # REDO SO WE GET CONTENT OF POST TOO #
 ######################################
 
+raw_submissions = []
+
+# remade above but as a df
+for submission in submissions:
+    raw_submissions.append({
+        "id": submission.id,
+        "title": submission.title,
+        "content": submission.selftext,
+        "user": submission.author,
+        "subreddit": submission.subreddit.display_name,
+        "date": submission.created_utc
+    })
+
+df_submissions = pd.DataFrame(raw_submissions)
+
+
+
+# tokennize
+
+
+
+
+
+
+
+
+
+
+
 
 
 # tickers to lower too
